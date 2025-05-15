@@ -35,13 +35,14 @@ class Player{
     }
 
     calcPoints() {
+        this.points = 0;
         for(let card of this.cards){
             this.points += card.wartosc;
         }
         if(this.cards.some(card => card.name === "A") && this.points < 12){
             this.points += 10;
         }
-        console.log(this.points);
+        //console.log(this.points);
     }
 }
 
@@ -52,13 +53,21 @@ function shuffle(deck) {
     }
 }
 
+function playerWin() {
+    console.log("player won")
+}
+
+function playerLose() {
+    console.log("player lost")
+}
+
 var player;
 var dealer;
 var deck;
 
 function restart() {
     deck = new Deck();
-    dealer = [];
+    dealer = new Player();
     player = new Player();
 }
 
@@ -68,17 +77,45 @@ function start() {
 
     player.cards.push(deck.cards[0]);
     player.cards.push(deck.cards[1]);
-    dealer.push(deck.cards[2]);
-    dealer.push(deck.cards[3]);
+    dealer.cards.push(deck.cards[2]);
+    dealer.cards.push(deck.cards[3]);
     for(let i=0; i<4; i++)
         deck.cards.shift();
     player.calcPoints();
+    dealer.calcPoints();
+    if(dealer.points == 21){
+        //krupier ma bj
+        playerWin();
+    }else if(player.points == 21){
+        //gracz ma bj
+        playerLose();
+    }
+}
+
+function dealerPlay() {
+    if(dealer.points <= 16){
+        dealer.cards.push(deck.cards[0]);
+        deck.cards.shift();
+    }else if(dealer.points > player.points){
+        playerLose
+    }else{
+        playerWin
+    }
 }
 
 function hit() {
-
+    player.cards.push(deck.cards[0])
+    deck.cards.shift();
+    player.calcPoints();
+    if(player.points == 21){
+        //win
+        playerWin
+    }else if(player.points > 21){
+        //lose
+        playerLose
+    }
 }
 
 function stand() {
-
+    dealerPlay();
 }
