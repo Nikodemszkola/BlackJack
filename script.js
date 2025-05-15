@@ -28,6 +28,12 @@ class Talia {
     }
 }
 
+function shuffle(talia) {
+    for (let i = talia.cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [talia.cards[i], talia.cards[j]] = [talia.cards[j], talia.cards[i]]; // Zamiana miejsc
+    }
+}
 
 function start() {
 
