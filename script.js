@@ -41,6 +41,7 @@ class Player{
         if(this.cards.some(card => card.name === "A") && this.points < 12){
             this.points += 10;
         }
+        console.log(this.points);
     }
 }
 
