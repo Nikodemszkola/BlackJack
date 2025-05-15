@@ -100,6 +100,7 @@ function dealerPlay() {
     if(dealer.points <= 16){
         dealer.cards.push(deck.cards[0]);
         deck.cards.shift();
+        dealer.calcPoints()
         dealerPlay();
     }else if(dealer.points > player.points){
         playerLose();
