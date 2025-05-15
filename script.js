@@ -97,9 +97,9 @@ function dealerPlay() {
         dealer.cards.push(deck.cards[0]);
         deck.cards.shift();
     }else if(dealer.points > player.points){
-        playerLose
+        playerLose();
     }else{
-        playerWin
+        playerWin();
     }
 }
 
@@ -109,10 +109,10 @@ function hit() {
     player.calcPoints();
     if(player.points == 21){
         //win
-        playerWin
+        playerWin();
     }else if(player.points > 21){
         //lose
-        playerLose
+        playerLose();
     }
 }
 
