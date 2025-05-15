@@ -54,11 +54,11 @@ function shuffle(deck) {
 }
 
 function playerWin() {
-    console.log("player won")
+    console.log("player won");
 }
 
 function playerLose() {
-    console.log("player lost")
+    console.log("player lost");
 }
 
 var player;
@@ -96,6 +96,7 @@ function dealerPlay() {
     if(dealer.points <= 16){
         dealer.cards.push(deck.cards[0]);
         deck.cards.shift();
+        dealerPlay();
     }else if(dealer.points > player.points){
         playerLose();
     }else{
@@ -108,8 +109,7 @@ function hit() {
     deck.cards.shift();
     player.calcPoints();
     if(player.points == 21){
-        //win
-        playerWin();
+        dealerPlay();
     }else if(player.points > 21){
         //lose
         playerLose();
