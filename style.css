@@ -11,10 +11,118 @@ h1{
     border-style: solid;
     border-color: red;
     width: 80%;
-    height: 600px;
+    height: 700px;
     position: absolute;
     left: 180px;
-    top: 200px;
+    top: 160px;
     border-radius: 10px;
     border-width: 8px;
+}
+.karty_arsenal{
+    position: absolute;
+    left: 60px;
+    top: 90px;
+}
+.karty_do_gry{
+    position: absolute;
+    left: 190px;
+    top: 540px;
+    width: 220px;
+    height: 250px;
+}
+.start{
+    border-style: solid;
+    border-color: gold;
+    width: 180px;
+    height: 50px;
+    font-weight: bold;
+    background-color: gold;
+    border-radius: 10px;
+    border-color: silver;
+    position: absolute;
+    left: 210px;
+    top: 800px;
+}
+.zeton_1{
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: black;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(179, 7, 7);
+  position: absolute;
+  left: 460px;
+  top: 720px;
+}
+.pod_zeton{
+    width: 60px;
+    height: 60px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 100%;
+    background-color: white;
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.zeton_2{
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: black;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(6, 168, 168);
+  position: absolute;
+  left: 650px;
+  top: 720px;
+}
+.zeton_3{
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: black;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(100, 128, 0);
+  position: absolute;
+  left: 840px;
+  top: 720px;
+}
+.zeton_4{
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: black;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  position: absolute;
+  left: 1030px;
+  top: 720px;
+}
+.hit{
+    position: absolute;
+    left: 1220px;
+    top: 750px;
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
 }
