@@ -61,6 +61,10 @@ function playerLose() {
     console.log("player lost");
 }
 
+function draw() {
+    console.log("draw");
+}
+
 var player;
 var dealer;
 var deck;
@@ -88,7 +92,7 @@ function start() {
         playerWin();
     }else if(player.points == 21){
         //gracz ma bj
-        playerLose();
+        dealerPlay();
     }
 }
 
@@ -99,13 +103,15 @@ function dealerPlay() {
         dealerPlay();
     }else if(dealer.points > player.points){
         playerLose();
-    }else{
+    }else if(player.points > dealer.points){
         playerWin();
+    }else{
+        draw();
     }
 }
 
 function hit() {
-    player.cards.push(deck.cards[0])
+    player.cards.push(deck.cards[0]);
     deck.cards.shift();
     player.calcPoints();
     if(player.points == 21){
