@@ -48,11 +48,18 @@ function shuffle(deck) {
     }
 }
 
-var player = new Player();
-var dealer = [];
-var deck = new Deck();
+var player;
+var dealer;
+var deck;
+
+function restart() {
+    deck = new Deck();
+    dealer = [];
+    player = new Player();
+}
 
 function start() {
+    restart();
     shuffle(deck);
 
     player.cards.push(deck.cards[0]);
