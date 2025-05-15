@@ -4,7 +4,7 @@ class Card {
             "J": 10,
             "Q": 10,
             "K": 10,
-            "A": 11,
+            "A": 1,
         }
 
         this.name = name;
@@ -38,13 +38,16 @@ class Player{
         for(let card of this.cards){
             this.points += card.wartosc;
         }
+        if(this.cards.some(card => card.name === "A") && this.points < 12){
+            this.points += 10;
+        }
     }
 }
 
 function shuffle(deck) {
     for (let i = deck.cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [deck.cards[i], deck.cards[j]] = [deck.cards[j], deck.cards[i]]; // Zamiana miejsc
+        [deck.cards[i], deck.cards[j]] = [deck.cards[j], deck.cards[i]];
     }
 }
 
@@ -68,6 +71,7 @@ function start() {
     dealer.push(deck.cards[3]);
     for(let i=0; i<4; i++)
         deck.cards.shift();
+    player.calcPoints();
 }
 
 function hit() {
