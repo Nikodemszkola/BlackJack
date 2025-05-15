@@ -1,5 +1,5 @@
 class Card {
-    constructor(name,wartosc,kolor) {
+    constructor(name,kolor) {
         const dictWartosci = {
             "J": 10,
             "Q": 10,
