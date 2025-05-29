@@ -157,3 +157,6 @@ h1{
 .hit, .stand, .start, .how_to{
   cursor:pointer;
 }
+.zeton_2,.zeton_3,.zeton_4,.pod_zeton, .zeton_1{
+cursor: pointer;
+}
