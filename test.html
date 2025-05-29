@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -59,25 +58,5 @@
  
     <button type="submit">Zarejestruj</button>
 </form>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "blackjack";
- 
-$conn = mysqli_connect($servername, $username, $password, $database);
- 
-if($conn)
-{
-    $imie = $_POST['imie'];
-    $nazwisko = $_POST['nazwisko'];
-    $login = $_POST['login'];
-    $blacklist = $_POST['blacklist'];
-    if (isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['login'])) {
-        $q = 'INSERT INTO gracze(imie, nazwisko, login, blacklist) VALUES($imie, $nazwisko, $login, $blacklist);';
-        $result = mysqli_query($conn, $q);
-    }
-}
-?>
 </body>
 </html>

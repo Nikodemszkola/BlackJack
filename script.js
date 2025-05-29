@@ -53,81 +53,101 @@ function shuffle(deck) {
     }
 }
 
-function playerWin() {
+var vDeck;
+var vDealer;
+
+function setVars(deck,dealer){
+    vDealer = dealer;
+    vDeck = deck;
+}
+
+function playerWin(deck,dealer) {
+    setVars(deck,dealer);
     console.log("player won");
 }
 
-function playerLose() {
+function playerLose(deck,dealer) {
+    setVars(deck,dealer);
     console.log("player lost");
 }
 
-function draw() {
+function draw(deck,dealer) {
+    setVars(deck,dealer);
     console.log("draw");
 }
 
 var player;
-var dealer;
-var deck;
 
-function restart() {
-    deck = new Deck();
-    dealer = new Player();
-    player = new Player();
-}
+const Game = (function() {
+    let deck;
+    let dealer;
 
-function start() {
-    restart();
-    shuffle(deck);
+    function restart() {
+        deck = new Deck();
+        dealer = new Player();
+        player = new Player();
+    }
 
-    player.cards.push(deck.cards[0]);
-    player.cards.push(deck.cards[1]);
-    dealer.cards.push(deck.cards[2]);
-    dealer.cards.push(deck.cards[3]);
-    for(let i=0; i<4; i++)
+    function start() {
+        restart();
+        shuffle(deck);
+
+        player.cards.push(deck.cards[0]);
+        player.cards.push(deck.cards[1]);
+        dealer.cards.push(deck.cards[2]);
+        dealer.cards.push(deck.cards[3]);
+
+        for (let i = 0; i < 4; i++) deck.cards.shift();
+
+        player.calcPoints();
+        dealer.calcPoints();
+
+        if (dealer.points === 21) {
+            playerWin(deck,dealer);
+        } else if (player.points === 21) {
+            dealerPlay();
+        }
+    }
+
+    function dealerPlay() {
+        if (dealer.points <= 16) {
+            dealer.cards.push(deck.cards[0]);
+            deck.cards.shift();
+            dealer.calcPoints();
+            dealerPlay();
+        } else if (dealer.points > 21) {
+            playerWin(deck,dealer);
+        } else if (dealer.points > player.points) {
+            playerLose(deck,dealer);
+        } else if (player.points > dealer.points) {
+            playerWin(deck,dealer);
+        } else {
+            draw(deck,dealer);
+        }
+    }
+
+    function hit() {
+        player.cards.push(deck.cards[0]);
         deck.cards.shift();
-    player.calcPoints();
-    dealer.calcPoints();
-    if(dealer.points == 21){
-        //dealer bj
-        playerWin();
-    }else if(player.points == 21){
-        //gracz ma bj
+        player.calcPoints();
+        if (player.points === 21) {
+            dealerPlay();
+        } else if (player.points > 21) {
+            playerLose(deck,dealer);
+        }
+    }
+
+    function stand() {
         dealerPlay();
     }
-}
 
-function dealerPlay() {
-    if(dealer.points <= 16){
-        dealer.cards.push(deck.cards[0]);
-        deck.cards.shift();
-        dealer.calcPoints()
-        dealerPlay();
-    }else if(dealer.points > 21){
-        playerWin();
-    }else if(dealer.points > player.points){
-        playerLose();
-    }else if(player.points > dealer.points){
-        playerWin();
-    }else{
-        draw();
-    }
-}
-
-function hit() {
-    player.cards.push(deck.cards[0]);
-    deck.cards.shift();
-    player.calcPoints();
-    if(player.points == 21){
-        dealerPlay();
-    }else if(player.points > 21){
-        //lose
-        playerLose();
-    }
-}
-
-function stand() {
-    dealerPlay();
-}
+    return {
+        start,
+        restart,
+        hit,
+        stand,
+    };
+})();
 
 var stawka = 0;
 
