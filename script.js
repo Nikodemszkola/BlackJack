@@ -11,6 +11,8 @@ class Card {
         this.kolor = kolor;
 
         this.wartosc = dictWartosci[name] != null ? dictWartosci[name] : parseInt(name);
+
+        this.htmlCard = "<div class=karta_a><div class=kwadrat1>" + this.name + "</div><div class=kwadrat2>" + this.name + "</div><div class=kwadrat3>" + this.name + "</div></div>"
     }
 }
 
