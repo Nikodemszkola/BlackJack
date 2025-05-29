@@ -19,6 +19,6 @@
 <div class="zeton_4"><div class="pod_zeton"><b>500</b></div></div>
 <button class="hit" onclick="hit()">Hit</button>
 <button class="stand" onclick="stand()">Stand</button>
-
+<button class="how_to">Help</button>
 </body>
 </html>
