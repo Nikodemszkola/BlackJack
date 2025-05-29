@@ -129,7 +129,7 @@ function stand() {
     dealerPlay();
 }
 
-var stawka;
+var stawka = 0;
 
 function setStawka(){
     let stawkaTd = document.getElementById('stawka');
