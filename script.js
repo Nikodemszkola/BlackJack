@@ -128,3 +128,21 @@ function hit() {
 function stand() {
     dealerPlay();
 }
+
+var stawka = document.getElementById('stawka');
+
+function dzZe() {
+    stawka += 10;
+}
+
+function piZe() {
+    stawka += 50;
+}
+
+function stZe() {
+    stawka += 100;
+}
+
+function psZe() {
+    stawka += 500;
+}
