@@ -88,7 +88,7 @@ function start() {
     player.calcPoints();
     dealer.calcPoints();
     if(dealer.points == 21){
-        //krupier ma bj
+        //dealer bj
         playerWin();
     }else if(player.points == 21){
         //gracz ma bj
