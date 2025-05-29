@@ -129,20 +129,29 @@ function stand() {
     dealerPlay();
 }
 
-var stawka = document.getElementById('stawka');
+var stawka;
+
+function setStawka(){
+    let stawkaTd = document.getElementById('stawka');
+    stawkaTd.innerText = stawka;
+}
 
 function dzZe() {
     stawka += 10;
+    setStawka();
 }
 
 function piZe() {
     stawka += 50;
+    setStawka();
 }
 
 function stZe() {
     stawka += 100;
+    setStawka();
 }
 
 function psZe() {
     stawka += 500;
+    setStawka();
 }
