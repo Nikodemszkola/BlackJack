@@ -213,7 +213,27 @@ cursor: pointer;
 .wynik{
   color: white;
   position: absolute;
-  font-size: 50px;
+  font-size: 40px;
   left: 840px;
   top: 650px;
+}
+.wynik2{
+  
+  color: white;
+  position: absolute;
+  font-size: 40px;
+  left: 840px;
+  top: 180px;
+
+}
+table{
+  position: absolute;
+  color: white;
+  left: 1450px;
+  top: 500px;
+  border: 7px solid red;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 50px;
 }
