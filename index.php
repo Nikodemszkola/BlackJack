@@ -25,7 +25,7 @@
         <th>Stawka:</th>
     </tr>
     <tr>
-        <td>1000np</td>
+        <td></td>
     </tr>
 </table>
 <button class="start" onclick="start()">Rozpocznij grę</button>
