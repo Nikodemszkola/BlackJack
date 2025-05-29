@@ -126,3 +126,17 @@ h1{
     border-width: 3px;
     border-radius: 10px;
 }
+.stand{
+  position: absolute;
+    left: 1400px;
+    top: 750px;
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+}
