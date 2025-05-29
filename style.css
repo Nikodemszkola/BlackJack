@@ -23,12 +23,62 @@ h1{
     left: 60px;
     top: 90px;
 }
-.karty_do_gry{
-    position: absolute;
-    left: 190px;
-    top: 540px;
-    width: 220px;
-    height: 250px;
+.karta_k{
+  border-style: solid;
+  border-color: white;
+  width: 180px;
+  height: 280px;
+  position: absolute;
+  left: 210px;
+  top: 200px;
+  background-color: white;
+  border-radius: 10px;
+    cursor: pointer;
+}
+.karta_a{
+   border-style: solid;
+  border-color: white;
+  width: 180px;
+  height: 280px;
+  position: absolute;
+  left: 210px;
+  top: 500px;
+  background-color: white;
+  border-radius: 10px;
+   cursor: pointer;
+}
+.kwadrat1{
+  width: 20px;
+  height: 20px;
+ color: black;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+.kwadrat2{
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 74px;
+  top: 110px;
+  position: absolute;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.kwadrat3{
+  transform: rotateY(180deg);
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 140px;
+  top: 235px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
 }
 .start{
     border-style: solid;
@@ -159,4 +209,11 @@ h1{
 }
 .zeton_2,.zeton_3,.zeton_4,.pod_zeton, .zeton_1{
 cursor: pointer;
+}
+.wynik{
+  color: white;
+  position: absolute;
+  font-size: 50px;
+  left: 840px;
+  top: 650px;
 }
