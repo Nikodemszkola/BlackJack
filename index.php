@@ -30,10 +30,10 @@
     </tr>
 </table>
 <button class="start" onclick="start()">Rozpocznij grę</button>
-<div onclick="" class="zeton_1"><div class="pod_zeton"><b>10</b></div></div>
-<div class="zeton_2"><div class="pod_zeton"><b>50</b></div></div>
-<div class="zeton_3"><div class="pod_zeton"><b>100</b></div></div>
-<div class="zeton_4"><div class="pod_zeton"><b>500</b></div></div>
+<div onclick="dzZe()" class="zeton_1"><div class="pod_zeton"><b>10</b></div></div>
+<div onclick="piZe()" class="zeton_2"><div class="pod_zeton"><b>50</b></div></div>
+<div onclick="stZe()" class="zeton_3"><div class="pod_zeton"><b>100</b></div></div>
+<div onclick="psZe()" class="zeton_4"><div class="pod_zeton"><b>500</b></div></div>
 <h1 class="wynik">Wynik:</h1>
 <h1 class="wynik2">Wynik:</h1>
 <button class="hit" onclick="hit()">Hit</button>
