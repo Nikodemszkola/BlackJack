@@ -61,24 +61,40 @@ var vDealer;
 function setVars(deck,dealer){
     vDealer = dealer;
     vDeck = deck;
+
+    game = false;
 }
+
+var wynikHtml = document.getElementById('wynik');
 
 function playerWin(deck,dealer) {
     setVars(deck,dealer);
-    console.log("player won");
+    wynikHtml.innerText = "You won!"
+    balance += 2*stawka;
+    stawka = 0;
+    
+    setMoney();
 }
 
 function playerLose(deck,dealer) {
     setVars(deck,dealer);
-    console.log("player lost");
+    wynikHtml.innerText = "You lost!"
+    stawka = 0;
+    
+    setMoney();
 }
 
 function draw(deck,dealer) {
     setVars(deck,dealer);
-    console.log("draw");
+    wynikHtml.innerText = "Draw!"
+    balance += stawka;
+    stawka = 0;
+    
+    setMoney();
 }
 
 var player;
+var game = false;
 
 const Game = (function() {
     let deck;
@@ -91,23 +107,29 @@ const Game = (function() {
     }
 
     function start() {
-        restart();
-        shuffle(deck);
+        if(!game){
+            game = true;
 
-        player.cards.push(deck.cards[0]);
-        player.cards.push(deck.cards[1]);
-        dealer.cards.push(deck.cards[2]);
-        dealer.cards.push(deck.cards[3]);
+            wynikHtml.innerText = "game started";
 
-        for (let i = 0; i < 4; i++) deck.cards.shift();
+            restart();
+            shuffle(deck);
 
-        player.calcPoints();
-        dealer.calcPoints();
+            player.cards.push(deck.cards[0]);
+            player.cards.push(deck.cards[1]);
+            dealer.cards.push(deck.cards[2]);
+            dealer.cards.push(deck.cards[3]);
 
-        if (dealer.points === 21) {
-            playerWin(deck,dealer);
-        } else if (player.points === 21) {
-            dealerPlay();
+            for (let i = 0; i < 4; i++) deck.cards.shift();
+
+            player.calcPoints();
+            dealer.calcPoints();
+
+            if (dealer.points === 21) {
+                playerLose(deck,dealer);
+            } else if (player.points === 21) {
+                dealerPlay();
+            }
         }
     }
 
@@ -129,18 +151,22 @@ const Game = (function() {
     }
 
     function hit() {
-        player.cards.push(deck.cards[0]);
-        deck.cards.shift();
-        player.calcPoints();
-        if (player.points === 21) {
-            dealerPlay();
-        } else if (player.points > 21) {
-            playerLose(deck,dealer);
+        if(game){
+            player.cards.push(deck.cards[0]);
+            deck.cards.shift();
+            player.calcPoints();
+            if (player.points === 21) {
+                dealerPlay();
+            } else if (player.points > 21) {
+                playerLose(deck,dealer);
+            }
         }
     }
 
     function stand() {
-        dealerPlay();
+        if(game){
+            dealerPlay();
+        }
     }
 
     return {
@@ -151,7 +177,26 @@ const Game = (function() {
     };
 })();
 
+var balance = 200;
+var balanceHtml = document.getElementById('balance');
+
+function setBalance() {
+    balanceHtml.innerText = balance;
+}
+
+function setMoney() {
+    setBalance();
+    setStawka();
+}
+
 var stawka = 0;
+
+function resetStawka() {
+    balance += stawka;
+    stawka = 0;
+
+    setMoney();
+}
 
 function setStawka(){
     let stawkaTd = document.getElementById('stawka');
@@ -159,21 +204,39 @@ function setStawka(){
 }
 
 function dzZe() {
-    stawka += 10;
-    setStawka();
+    if(!game && balance >= 10){
+        stawka += 10;
+        balance -= 10;
+
+        setMoney();
+    }
 }
 
 function piZe() {
-    stawka += 50;
-    setStawka();
+    if(!game && balance >= 50){
+        stawka += 50;
+        balance -= 50;
+
+        setMoney();
+    }
 }
 
 function stZe() {
-    stawka += 100;
-    setStawka();
+    if(!game && balance >= 100){
+        stawka += 100;
+        balance -= 100;
+
+        setMoney();
+    }
 }
 
 function psZe() {
-    stawka += 500;
-    setStawka();
+    if(!game && balance >= 500){
+        stawka += 500;
+        balance -= 500;
+
+        setMoney();
+    }
 }
+
+setBalance();

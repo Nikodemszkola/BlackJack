@@ -80,4 +80,5 @@ if($conn)
 }
 ?>
 </body>
+<script src="script.js"></script>
 </html>
