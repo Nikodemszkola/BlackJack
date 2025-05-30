@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -6,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackJack</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
 <h1>Blackjack</h1>
@@ -26,7 +24,7 @@
         <th>Stawka:</th>
     </tr>
     <tr>
-        <td id="stawka">0</td>
+        <td onclick="resetStawka()" id="stawka">0</td>
     </tr>
 </table>
 <button class="start" onclick="Game.start()">Rozpocznij grę</button>
@@ -35,7 +33,8 @@
 <div onclick="stZe()" class="zeton_3"><div class="pod_zeton"><b>100</b></div></div>
 <div onclick="psZe()" class="zeton_4"><div class="pod_zeton"><b>500</b></div></div>
 <h1 class="wynik">Wynik:</h1>
-<h1 class="wynik2">Wynik:</h1>
+<h1 class="wynik2">Wynik: <b id="wynik"></b></h1>
+<h3>Balance: <b id="balance"></b></h3>
 <button class="hit" onclick="Game.hit()">Hit</button>
 <button class="stand" onclick="Game.stand()">Stand</button>
 <button class="how_to">Help</button>
