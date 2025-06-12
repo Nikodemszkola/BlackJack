@@ -245,3 +245,32 @@ table{
   text-align: center;
   font-size: 50px;
 }
+h3{
+position: absolute;
+left: 1500px;
+top: 670px;
+color: white;
+font-size: 25px;
+}
+.karta1{
+  width: 120px;
+  height: 170px;
+  border-style: solid;
+  border-color:white;
+  position:absolute;
+  left: 780px;
+  top: 470px;
+  background-color: white;
+  border-radius: 10px; 
+}
+.karta2{
+  width: 120px;
+  height: 170px;
+  border-style: solid;
+  border-color:white;
+  position:absolute;
+  left: 920px;
+  top: 470px;
+  background-color: white;
+  border-radius: 10px; 
+}
