@@ -93,6 +93,16 @@ function draw(deck,dealer) {
     setMoney();
 }
 
+function showCardsInGrid(cards) {
+    const grid = document.getElementById('card-grid');
+    grid.innerHTML = '';
+    cards.slice(0, 9).forEach(card => {
+        const div = document.createElement('div');
+        div.innerHTML = card.htmlCard;
+        grid.appendChild(div.firstChild);
+    });
+}
+
 var player;
 var game = false;
 
@@ -124,6 +134,8 @@ const Game = (function() {
 
             player.calcPoints();
             dealer.calcPoints();
+
+            showCardsInGrid(player.cards);
 
             if (dealer.points === 21) {
                 playerLose(deck,dealer);
