@@ -33,9 +33,9 @@
 <div onclick="stZe()" class="zeton_3"><div class="pod_zeton"><b>100</b></div></div>
 <div onclick="psZe()" class="zeton_4"><div class="pod_zeton"><b>500</b></div></div>
 <div class="karta1">
-    <div class="kwadrat4"></div>
-    <div class="kwadrat5"></div>
-    <div class="kwadrat6"></div>
+    <div class="kwadrat4">k</div>
+    <div class="kwadrat5">k</div>
+    <div class="kwadrat6">k</div>
 </div>
 <div class="karta2">
 <div class="kwadrat4"></div>
