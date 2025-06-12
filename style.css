@@ -250,7 +250,7 @@ table{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 30px;
+    bottom: 100px;
     width: 90vw;
     max-width: 1700px;
     display: grid;
