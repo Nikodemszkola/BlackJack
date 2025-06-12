@@ -41,7 +41,7 @@ h1{
   top: 200px;
   background-color: white;
   border-radius: 10px;
-    cursor: pointer;
+    
 }
 .karta_a{
    border-style: solid;
@@ -53,7 +53,7 @@ h1{
   top: 500px;
   background-color: white;
   border-radius: 10px;
-   cursor: pointer;
+   
 }
 .start{
     border-style: solid;
