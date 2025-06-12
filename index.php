@@ -59,6 +59,6 @@
 <button class="stand" onclick="Game.stand()">Stand</button>
 <button class="how_to">Help</button>
 
-</body>
+</body>aaw
 <script src="script.js"></script>
 </html>
