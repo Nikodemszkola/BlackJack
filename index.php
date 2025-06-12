@@ -38,46 +38,7 @@
 <button class="hit" onclick="Game.hit()">Hit</button>
 <button class="stand" onclick="Game.stand()">Stand</button>
 <button class="how_to">Help</button>
-<form action="index.php" method="POST">
-    <h1>Zarejestruj gracza</h1>
- 
-    <label for="imie">Podaj imię</label>
-    <input type="text" id="imie" name="imie" required>
- 
-    <label for="nazwisko">Podaj nazwisko</label>
-    <input type="text" id="nazwisko" name="nazwisko" required>
- 
-    <label for="login">Podaj login</label>
-    <input type="text" id="login" name="login" required>
- 
-    <label for="blacklist">Blacklist</label>
-    <select name="blacklist" id="blacklist">
-        <option value="True">YES</option>
-        <option value="False">NO</option>
-    </select>
- 
-    <button type="submit">Zarejestruj</button>
-</form>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "blackjack";
- 
-$conn = mysqli_connect($servername, $username, $password, $database);
- 
-if($conn)
-{
-    $imie = $_POST['imie'];
-    $nazwisko = $_POST['nazwisko'];
-    $login = $_POST['login'];
-    $blacklist = $_POST['blacklist'];
-    if (isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['login'])) {
-        $q = 'INSERT INTO gracze(imie, nazwisko, login, blacklist) VALUES($imie, $nazwisko, $login, $blacklist);';
-        $result = mysqli_query($conn, $q);
-    }
-}
-?>
+
 </body>
 <script src="script.js"></script>
 </html>
