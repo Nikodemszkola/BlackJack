@@ -55,39 +55,6 @@ h1{
   border-radius: 10px;
    cursor: pointer;
 }
-.kwadrat1{
-  width: 20px;
-  height: 20px;
- color: black;
-  left: 10px;
-  top: 10px;
-  position: absolute;
-  font-size: 30px;
-  font-weight: bold;
-
-}
-.kwadrat2{
-   width: 20px;
-  height: 20px;
- color: black;
-  left: 74px;
-  top: 110px;
-  position: absolute;
-  font-size: 50px;
-  font-weight: bold;
-
-}
-.kwadrat3{
-  transform: rotateY(180deg);
-   width: 20px;
-  height: 20px;
- color: black;
-  left: 140px;
-  top: 235px;
-  position: absolute;
-  font-size: 30px;
-  font-weight: bold;
-}
 .start{
     border-style: solid;
     border-color: gold;
@@ -304,4 +271,64 @@ h3{
   height: 170px;
   border-style: solid;
   border-color:white;
+}
+.kwadrat1{
+  width: 20px;
+  height: 20px;
+ color: black;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+.kwadrat2{
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 74px;
+  top: 110px;
+  position: absolute;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.kwadrat3{
+  transform: rotateY(180deg);
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 140px;
+  top: 235px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+}
+.kwadrat4{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+.kwadrat5{
+  transform: rotateY(180deg);
+color: black;
+ left: 100px;
+ top: 150px;
+ position: absolute;
+ font-size: 15px;
+ font-weight: bold;
+}
+.kwadrat6{
+  width: 20px;
+  height: 20px;
+ color: black;
+  left: 48px;
+  top: 75px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
 }
