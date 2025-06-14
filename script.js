@@ -12,7 +12,7 @@ class Card {
 
         this.wartosc = dictWartosci[name] != null ? dictWartosci[name] : parseInt(name);
 
-        this.htmlCard = "<div class=karta_a><div class=kwadrat1>" + this.name + "</div><div class=kwadrat2>" + this.name + "</div><div class=kwadrat3>" + this.name + "</div></div>"
+        this.htmlCard = "<div class=kwadrat4>" + this.name + "</div><div class=kwadrat5>" + this.name + "</div><div class=kwadrat6>" + this.name + "</div>"
     }
 }
 
@@ -93,6 +93,25 @@ function draw(deck,dealer) {
     setMoney();
 }
 
+/*function showCardsInGrid(cards) {
+    const grid = document.getElementById('card-grid');
+    grid.innerHTML = '';
+    cards.slice(0, 9).forEach(card => {
+        const div = document.createElement('div');
+        div.innerHTML = card.htmlCard;
+        grid.appendChild(div.firstChild);
+    });
+}*/
+
+function showPlayerCards() {
+    const playerCard1 = document.querySelector('.karta1');
+    const playerCard2 = document.querySelector('.karta2');
+    if (player.cards.length = 2) {
+        playerCard1.innerHTML = player.cards[0].htmlCard;
+        playerCard2.innerHTML = player.cards[1].htmlCard;
+    }
+}
+
 var player;
 var game = false;
 
@@ -124,6 +143,9 @@ const Game = (function() {
 
             player.calcPoints();
             dealer.calcPoints();
+
+            showPlayerCards();
+            //showCardsInGrid(player.cards);
 
             if (dealer.points === 21) {
                 playerLose(deck,dealer);

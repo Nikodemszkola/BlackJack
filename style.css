@@ -41,7 +41,7 @@ h1{
   top: 200px;
   background-color: white;
   border-radius: 10px;
-    cursor: pointer;
+    
 }
 .karta_a{
    border-style: solid;
@@ -53,40 +53,7 @@ h1{
   top: 500px;
   background-color: white;
   border-radius: 10px;
-   cursor: pointer;
-}
-.kwadrat1{
-  width: 20px;
-  height: 20px;
- color: black;
-  left: 10px;
-  top: 10px;
-  position: absolute;
-  font-size: 30px;
-  font-weight: bold;
-
-}
-.kwadrat2{
-   width: 20px;
-  height: 20px;
- color: black;
-  left: 74px;
-  top: 110px;
-  position: absolute;
-  font-size: 50px;
-  font-weight: bold;
-
-}
-.kwadrat3{
-  transform: rotateY(180deg);
-   width: 20px;
-  height: 20px;
- color: black;
-  left: 140px;
-  top: 235px;
-  position: absolute;
-  font-size: 30px;
-  font-weight: bold;
+   
 }
 .start{
     border-style: solid;
@@ -244,4 +211,124 @@ table{
   padding: 20px;
   text-align: center;
   font-size: 50px;
+}
+
+#card-grid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    width: 90vw;
+    max-width: 1700px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    min-height: 300px;
+    z-index: 100;
+}
+
+h3{
+  position: absolute;
+  left: 1500px;
+  top: 670px;
+  color: white;
+  font-size: 25px;
+}
+.karta1{
+ 
+  position:absolute;
+  left: 780px;
+  top: 470px;
+ 
+  
+}
+.karta2{
+  
+  position:absolute;
+  left: 920px;
+  top: 470px;
+  
+}
+.karta3{
+ 
+  position:absolute;
+  left: 920px;
+  top: 240px;
+
+}
+.karta4{
+ position: absolute;
+  left: 780px;
+  top: 240px;
+ 
+}
+.karta1, .karta2 , .karta3, .karta4{
+  background-color: white;
+  border-radius: 10px; 
+  width: 120px;
+  height: 170px;
+  border-style: solid;
+  border-color:white;
+}
+.kwadrat1{
+  width: 20px;
+  height: 20px;
+ color: black;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+.kwadrat2{
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 74px;
+  top: 110px;
+  position: absolute;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.kwadrat3{
+  transform: rotateY(180deg);
+   width: 20px;
+  height: 20px;
+ color: black;
+  left: 140px;
+  top: 235px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+}
+.kwadrat4{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+.kwadrat5{
+  transform: rotateY(180deg);
+color: black;
+ left: 100px;
+ top: 150px;
+ position: absolute;
+ font-size: 15px;
+ font-weight: bold;
+}
+.kwadrat6{
+  width: 20px;
+  height: 20px;
+ color: black;
+  left: 48px;
+  top: 75px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
 }
